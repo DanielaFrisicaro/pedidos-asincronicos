@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="countries.js"></script>
+<body>
+<h1> Provincias de Argentina mas visitadas segun latitud</h1>
+
+<a href="./dashboard.html">Dashboard</a> <br><br>
+   
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+var xValues = ["Ciudad Autonoma de Buenos Aires", "Tierra del Fuego", "Santa Cruz", "Rio Negro", "Neuquen"];
+var yValues = [34.6144934119689, 82.52151781221, 48.8154851827063,  40.4057957178801, 38.6417575824599];
+var barColors = [
+  "rgba(255,0,0,1.0)",
+  "rgba(255,0,0,0.8)",
+  "rgba(255,0,0,0.6)",
+  "rgba(255,0,0,0.4)",
+  "rgba(255,0,0,0.2)"
+];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }],
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+
